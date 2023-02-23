@@ -47,17 +47,21 @@ class GFG {
 class Solution {
     public long kthElement( int arr1[], int arr2[], int n, int m, int k) {
         
-       ArrayList<Integer> al=new ArrayList<>();
-       
-       for(int i:arr1){
-           al.add(i);
-       }
-       for(int i:arr2){
-           al.add(i);
-       }
-       
-       Collections.sort(al);
-       
-       return (long)al.get(k-1);
+        int[] arr=new int[m+n];
+        
+        for(int i=0;i<n;i++){
+            arr[i]=arr1[i];
+        }
+        
+          for(int i=0;i<m;i++){
+            arr[n+i]=arr2[i];
+        }
+        
+        Arrays.sort(arr);
+        
+        return arr[k-1];
+        
+        
+        
     }
 }
