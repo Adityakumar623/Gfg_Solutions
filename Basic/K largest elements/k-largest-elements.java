@@ -44,15 +44,38 @@ class Solution
     {
         // code here 
         
-        ArrayList<Integer> al=new ArrayList<Integer>();
-        Arrays.sort(arr);
         
-        for(int i=n-1;i>=0 && k>0;i-- ){
-            al.add(arr[i]);
-            k--;
+        // Arrays.sort(arr);
+        
+        // for(int i=n-1;i>=0 && k>0;i-- ){                          
+        //     al.add(arr[i]);
+        //     k--;
+        // }
+        
+        // return al;
+        
+        ArrayList<Integer> al=new ArrayList<>();
+        
+       PriorityQueue<Integer> pq=new PriorityQueue<>();
+
+        for(int i=0;i<n;i++){
+            pq.add(arr[i]);
+
+            if(pq.size()>k){
+                pq.poll();
+            }
         }
         
-        return al;
+        while(pq.size()>0){
+            al.add(pq.peek());pq.poll();
+        }
         
+      
+
+		// reversing the sorted list into descending order
+		Collections.reverse(al);
+        
+return al;
+       
     }
 }
