@@ -43,7 +43,7 @@ class Solution
         
         for(int i=0;i<A.length;i++){
             if(A[i]==key){
-                return i;
+                return i;                                 //// basically , it is a question of Binary Search 
             }
         }
         
