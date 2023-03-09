@@ -44,10 +44,12 @@ class Solution
         ArrayList<int[]> al=new ArrayList<>();
         
         for(int i=0;i<n;i++){
-            al.add(new int[]{start[i],end[i]});
+            al.add(new int[]{start[i],end[i]});    //Putting array in the list
         }
         
-        Collections.sort(al,(a,b)->(a[1]-b[1]));
+        Collections.sort(al,(a,b)->(a[1]-b[1]));  // This line of code sorts the List 
+                                                 // of arrays al based on the ascending order of 
+                                                //  the second element ([1]) of each array.
         
         int res=1;int prev=0;
         
